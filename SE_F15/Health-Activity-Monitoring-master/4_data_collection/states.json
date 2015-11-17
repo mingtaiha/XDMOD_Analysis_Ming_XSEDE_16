@@ -1,0 +1,50 @@
+{ "_id" : "NJ", "lastUpdate" : [ 2014, 10, 16 ], "name" : "New Jersey", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "NY", "lastUpdate" : [ 2014, 10, 16 ], "name" : "New York", "motherState" : "Null", "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "AL", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Alabama", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "AK", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Alaska", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "AZ", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Arizona", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "AR", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Arkansas", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "CA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "California", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "CO", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Colorado", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "CT", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Connecticut", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "DE", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Delaware", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "FL", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Florida", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "GA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Georgia", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "HI", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Hawaii", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "ID", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Idaho", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "NH", "lastUpdate" : [ 2014, 10, 16 ], "name" : "New Hampshire", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "NM", "lastUpdate" : [ 2014, 10, 16 ], "name" : "New Mexico", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "NC", "lastUpdate" : [ 2014, 10, 16 ], "name" : "North Carolina", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "ND", "lastUpdate" : [ 2014, 10, 16 ], "name" : "North Dakota", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "OH", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Ohio", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "OK", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Oklahoma", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "OR", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Oregon", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "PA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Pennsylvania", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "RI", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Rhode Island", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "SC", "lastUpdate" : [ 2014, 10, 16 ], "name" : "South Carolina", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "SD", "lastUpdate" : [ 2014, 10, 16 ], "name" : "South Dakota", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "TN", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Tennessee", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "TX", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Texas", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "UT", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Utah", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "IL", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Illinois", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "IN", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Indiana", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "IA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Iowa", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "KS", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Kansas", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "KY", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Kentucky", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "LA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Louisiana", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "ME", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Maine", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "MD", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Maryland", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "MA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Massachusetts", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "MI", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Michigan", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "MN", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Minnesota", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "MS", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Mississippi", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "MO", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Missouri", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "MT", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Montana", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "NE", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Nebraska", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "NV", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Nevada", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "VT", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Vermont", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "VA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Virginia", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "WA", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Washington", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "WV", "lastUpdate" : [ 2014, 10, 16 ], "name" : "West Virginia", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "WI", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Wisconsin", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
+{ "_id" : "WY", "lastUpdate" : [ 2014, 10, 16 ], "name" : "Wyoming", "motherState" : null, "lastTweetVal" : 0, "points" : 0, "totalTweets" : 0 }
