@@ -13,7 +13,7 @@ jd.executable      = '/bin/true'		#	Defining mandatory executable, the POSIX emp
 jd.queue           = 'normal'			#	Defining the queue
 jd.project         = 'TG-MCB090174'		#	Defining the Allocation
 jd.total_cpu_count = 8					# 	Defining the Number of Cores
-jd.wall_time_limit = 1					#	Defining the Wall Time
+jd.wall_time_limit = 1					#	Defining the Wall Time in Minutes
     
 j = js.create_job(jd)					#	Create the Job
 
