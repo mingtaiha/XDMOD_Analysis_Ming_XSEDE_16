@@ -1,0 +1,16 @@
+title
+"Number of Jobs Running: by Job Size"
+parameters
+"Resource =  TACC-STAMPEDE"
+start,end
+2015-06-01,2016-05-31
+---------
+"Job Size","Number of Jobs Running"
+"9 - 64",907028
+"65 - 256",298809
+"257 - 512",28468
+"513 - 1024",25237
+"1k - 8k",20818
+"8k - 32k",540
+"32k - 131k",1
+---------

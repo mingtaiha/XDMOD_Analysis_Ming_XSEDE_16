@@ -1,0 +1,16 @@
+title
+"Number of Jobs Running: by Job Size"
+parameters
+"Resource =  CCT-LSU-SUPERMIC"
+start,end
+2015-06-01,2016-05-31
+---------
+"Job Size","Number of Jobs Running"
+1,4
+"5 - 8",1
+"9 - 64",48136
+"65 - 256",8734
+"257 - 512",1167
+"513 - 1024",494
+"1k - 8k",179
+---------

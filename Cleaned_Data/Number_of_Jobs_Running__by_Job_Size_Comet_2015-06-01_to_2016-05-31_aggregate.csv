@@ -1,0 +1,17 @@
+title
+"Number of Jobs Running: by Job Size"
+parameters
+"Resource =  SDSC-COMET"
+start,end
+2015-06-01,2016-05-31
+---------
+"Job Size","Number of Jobs Running"
+1,986595
+"2 - 4",46446
+"5 - 8",29558
+"9 - 64",656239
+"65 - 256",109568
+"257 - 512",21065
+"513 - 1024",9080
+"1k - 8k",5520
+---------
