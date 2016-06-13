@@ -1,16 +1,13 @@
 title
 "Number of Jobs Running: by Job Size"
 parameters
-"Resource =  SDSC-GORDON"
+"Resource =  SDSC-COMET","Queue =  shared"
 start,end
 2015-06-01,2016-05-31
 ---------
 "Job Size","Number of Jobs Running"
-"2 - 4",1
-"5 - 8",63498
-"9 - 64",263227
-"65 - 256",16312
-"257 - 512",3704
-"513 - 1024",1660
-"1k - 8k",344
+1,970286
+"2 - 4",46149
+"5 - 8",19199
+"9 - 64",34916
 ---------

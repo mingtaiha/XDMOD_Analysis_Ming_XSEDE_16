@@ -1,0 +1,13 @@
+title
+"Wall Hours: Per Job: by Job Size"
+parameters
+"Resource =  SDSC-COMET","Queue =  shared"
+start,end
+2015-06-01,2016-05-31
+---------
+"Job Size","Wall Hours: Per Job","Std Dev: Wall Hours: Per Job"
+1,3.29739488,0.010981851444934868
+"2 - 4",15.38879204,0.14721622780410773
+"5 - 8",5.64271831,0.11489169909148242
+"9 - 64",5.90840044,0.07790780422618808
+---------

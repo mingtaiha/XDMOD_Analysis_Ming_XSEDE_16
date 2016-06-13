@@ -1,0 +1,15 @@
+title
+"Number of Jobs Running: by Job Size"
+parameters
+"Resource =  CCT-LSU-SUPERMIC","Queue =  workq"
+start,end
+2015-06-01,2016-05-31
+---------
+"Job Size","Number of Jobs Running"
+1,2
+"9 - 64",45992
+"65 - 256",7663
+"257 - 512",929
+"513 - 1024",479
+"1k - 8k",170
+---------

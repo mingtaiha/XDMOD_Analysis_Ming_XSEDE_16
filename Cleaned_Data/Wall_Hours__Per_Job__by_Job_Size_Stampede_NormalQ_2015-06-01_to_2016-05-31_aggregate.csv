@@ -1,0 +1,14 @@
+title
+"Wall Hours: Per Job: by Job Size"
+parameters
+"Resource =  TACC-STAMPEDE","Queue =  normal"
+start,end
+2015-06-01,2016-05-31
+---------
+"Job Size","Wall Hours: Per Job","Std Dev: Wall Hours: Per Job"
+"9 - 64",4.93156279,0.013573704613150264
+"65 - 256",4.89761419,0.022385723330175016
+"257 - 512",8.19405405,0.07948281929773768
+"513 - 1024",5.65458342,0.07247350563731135
+"1k - 8k",4.05365927,0.06839233388684061
+---------
