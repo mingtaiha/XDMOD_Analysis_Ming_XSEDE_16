@@ -1,5 +1,6 @@
 {
-    "resource" : "xsede.comet",
+    "resource"  : "xsede.comet",
+    "project"   : "unc100",
     "setup" : 
     [
         {

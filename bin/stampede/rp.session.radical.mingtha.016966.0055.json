@@ -1,0 +1,143 @@
+{
+    "pilot": [
+        {
+            "_id": "pilot.0000", 
+            "commands": [], 
+            "cores_per_node": null, 
+            "description": {
+                "_config": null, 
+                "access_schema": null, 
+                "candidate_hosts": null, 
+                "cleanup": null, 
+                "cores": 64, 
+                "exit_on_error": false, 
+                "memory": null, 
+                "project": "TG-MCB090174", 
+                "queue": "normal", 
+                "resource": "xsede.stampede", 
+                "runtime": 341, 
+                "sandbox": null
+            }, 
+            "finished": null, 
+            "global_sandbox": "/work/03662/tg829619/radical.pilot.sandbox", 
+            "heartbeat": null, 
+            "input_transfer_finished": null, 
+            "input_transfer_started": null, 
+            "log": [], 
+            "nodes": null, 
+            "output_transfer_finished": null, 
+            "output_transfer_started": null, 
+            "pilotmanager": "pmgr.0000", 
+            "sagajobid": null, 
+            "sandbox": "sftp://stampede.tacc.utexas.edu/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.016966.0055-pilot.0000/", 
+            "started": null, 
+            "state": "Launching", 
+            "statehistory": [
+                {
+                    "state": "PendingLaunch", 
+                    "timestamp": 1465945348.49856
+                }, 
+                {
+                    "state": "Launching", 
+                    "timestamp": 1465945348.690844
+                }
+            ], 
+            "submitted": 1465945348.49856, 
+            "unit_ids": [
+                "unit.000000"
+            ], 
+            "unitmanager": "umgr.0000"
+        }
+    ], 
+    "pmgr": [
+        {
+            "_id": "pmgr.0000", 
+            "data": {}, 
+            "pilot_launcher_workers": 1
+        }
+    ], 
+    "session": {
+        "_id": "rp.session.radical.mingtha.016966.0055", 
+        "connected": 1465945340.658552, 
+        "created": 1465945340.658552, 
+        "name": null
+    }, 
+    "umgr": [
+        {
+            "_id": "umgr.0000", 
+            "input_transfer_workers": 2, 
+            "output_transfer_workers": 2, 
+            "scheduler": "round_robin"
+        }
+    ], 
+    "unit": [
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000000", 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "20450.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465945350.049792
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465945351.097982
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "sftp://stampede.tacc.utexas.edu/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.016966.0055-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "sftp://stampede.tacc.utexas.edu/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.016966.0055-pilot.0000//unit.000000", 
+            "started": null, 
+            "state": "AgentStagingInputPending", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465945349.638152
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465945350.999189
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465945350.999189
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465945349.638152, 
+            "unitmanager": "umgr.0000"
+        }
+    ]
+}

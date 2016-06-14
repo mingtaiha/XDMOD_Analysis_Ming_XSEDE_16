@@ -1,5 +1,6 @@
 {
-    "resource" : "ncsa.bw",
+    "resource"  : "ncsa.bw",
+    "project"   : "gkd",
     "setup" : 
     [
         {

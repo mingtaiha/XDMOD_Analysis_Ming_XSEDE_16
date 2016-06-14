@@ -1,5 +1,6 @@
 {
-    "resource" : "xsede.stampede",
+    "resource"  : "xsede.stampede",
+    "project"   : "TG-MCB090174",
     "setup" : 
     [
         {
