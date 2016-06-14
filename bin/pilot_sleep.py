@@ -153,6 +153,6 @@ if __name__ == "__main__":
 
     finally:
         os.system("radicalpilot-close-session -m export -s %s" % sid)
-        os.system("mv %s.json %s" % (sid, r_dict[resource]))
+        os.system("mv %s.json %s" % (sid, r_dict[resource] + "_" + queue))
         session.close()
 
