@@ -105,54 +105,56 @@ if __name__ == "__main__":
         sys.exit()
 
     resource, project, queue_div, cores_list, exec_time_list, jobs_dist, node_sub, queue_list = read_config(sys.argv[1])
-    queue, exec_time, cores = job_define(queue_div, cores_list, exec_time_list, jobs_dist, node_sub, queue_list)
+    
+    while 1:
+        queue, exec_time, cores = job_define(queue_div, cores_list, exec_time_list, jobs_dist, node_sub, queue_list)
 
-    session = rp.Session()
-    sid = session.uid
+        session = rp.Session()
+        sid = session.uid
 
-    if (resource == 'xsede.comet') & (queue == 'shared'):
-        cfg = session.get_resource_config(resource)
-        new_cfg = rp.ResourceConfig(resource, cfg)
-        new_cfg.cores_per_node = 1
-        session.add_resource_config(new_cfg)
+        if (resource == 'xsede.comet') & (queue == 'shared'):
+            cfg = session.get_resource_config(resource)
+            new_cfg = rp.ResourceConfig(resource, cfg)
+            new_cfg.cores_per_node = 1
+            session.add_resource_config(new_cfg)
 
-    try:
+        try:
         
-        pmgr = rp.PilotManager(session=session)
+            pmgr = rp.PilotManager(session=session)
 
-        pd_init = {
-            'resource'      : resource,
-            'cores'         : cores,
-            'runtime'       : ceil(exec_time),
-            'project'       : project,
-            'queue'         : queue
-        }
+            pd_init = {
+                'resource'      : resource,
+                'cores'         : cores,
+                'runtime'       : ceil(exec_time),
+                'project'       : project,
+                'queue'         : queue
+            }
 
-        pdesc = rp.ComputePilotDescription(pd_init)
-        pilot = pmgr.submit_pilots(pdesc)
+            pdesc = rp.ComputePilotDescription(pd_init)
+            pilot = pmgr.submit_pilots(pdesc)
 
-        umgr = rp.UnitManager(session=session)
-        umgr.add_pilots(pilot)
+            umgr = rp.UnitManager(session=session)
+            umgr.add_pilots(pilot)
 
-        cuds = list()
-        cud = rp.ComputeUnitDescription()
-        cud.executable = '/bin/sleep'
-        cud.arguments = [str(floor(exec_time * 60))]
-        cuds.append(cud)
+            cuds = list()
+            cud = rp.ComputeUnitDescription()
+            cud.executable = '/bin/sleep'
+            cud.arguments = [str(floor(exec_time * 60))]
+            cuds.append(cud)
 
-        umgr.submit_units(cuds)
+            umgr.submit_units(cuds)
 
-        umgr.wait_units()
+            umgr.wait_units()
 
-    except Exception as e:
-        print "Caught Exception"
-        raise
+        except Exception as e:
+            print "Caught Exception"
+            raise
 
-    except (KeyboardInterrupt, SystemExit) as e:
-        print "Exiting"
+        except (KeyboardInterrupt, SystemExit) as e:
+            print "Exiting"
 
-    finally:
-        os.system("radicalpilot-close-session -m export -s %s" % sid)
-        os.system("mv %s.json %s" % (sid, r_dict[resource] + "_" + queue))
-        session.close()
+        finally:
+            os.system("radicalpilot-close-session -m export -s %s" % sid)
+            os.system("mv %s.json %s" % (sid, r_dict[resource] + "_" + queue))
+            session.close()
 
