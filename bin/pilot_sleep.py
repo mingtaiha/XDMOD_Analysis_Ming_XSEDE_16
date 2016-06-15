@@ -60,7 +60,7 @@ def job_define(q_div, c_list, e_list, j_dist, n_sub, q_list):
 
     j_idx = jobs_pick(j_dist[q_idx])
     print j_idx
-    exec_time = exec_time_list[q_idx][j_idx] * 60
+    exec_time = exec_time_list[q_idx][j_idx] * 60.0
 
     if n_sub[q_idx] == 1:
         cores = c_list[q_idx][j_idx]
@@ -139,7 +139,7 @@ if __name__ == "__main__":
             cuds = list()
             cud = rp.ComputeUnitDescription()
             cud.executable = '/bin/sleep'
-            cud.arguments = [str(floor(exec_time * 60))]
+            cud.arguments = [str(floor(exec_time * 60.0))]
             cuds.append(cud)
 
             umgr.submit_units(cuds)
