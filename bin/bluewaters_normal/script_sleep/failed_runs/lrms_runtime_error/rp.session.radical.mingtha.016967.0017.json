@@ -1,0 +1,2881 @@
+{
+    "pilot": [
+        {
+            "_id": "pilot.0000", 
+            "agent_config": {
+                "agent_launch_method": "ORTE", 
+                "agent_layout": {
+                    "agent_0": {
+                        "bridges": [
+                            "agent_staging_input_queue", 
+                            "agent_scheduling_queue", 
+                            "agent_executing_queue", 
+                            "agent_staging_output_queue", 
+                            "agent_unschedule_pubsub", 
+                            "agent_reschedule_pubsub", 
+                            "agent_command_pubsub", 
+                            "agent_state_pubsub"
+                        ], 
+                        "components": {
+                            "AgentStagingInputComponent": 1, 
+                            "AgentStagingOutputComponent": 1
+                        }, 
+                        "pull_units": true, 
+                        "sub_agents": [
+                            "agent_1"
+                        ], 
+                        "target": "local"
+                    }, 
+                    "agent_1": {
+                        "components": {
+                            "AgentExecutingComponent": 1, 
+                            "AgentSchedulingComponent": 1
+                        }, 
+                        "target": "node"
+                    }
+                }, 
+                "bulk_collection_time": 1.0, 
+                "cores": 32, 
+                "db_poll_sleeptime": 0.1, 
+                "debug": 10, 
+                "heartbeat_interval": 10, 
+                "lrms": "TORQUE", 
+                "max_io_loglength": 1024, 
+                "mongodb_url": "mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb", 
+                "mpi_launch_method": "ORTE", 
+                "network_interface": "ipogif0", 
+                "pilot_id": "pilot.0000", 
+                "runtime": 216, 
+                "scheduler": "CONTINUOUS", 
+                "session_id": "rp.session.radical.mingtha.016967.0017", 
+                "spawner": "POPEN", 
+                "staging_area": "staging_area", 
+                "staging_scheme": "staging", 
+                "task_launch_method": "ORTE"
+            }, 
+            "callbackhistory": [
+                {
+                    "state": "PendingLaunch", 
+                    "timestamp": 1465981493.158038
+                }, 
+                {
+                    "state": "Launching", 
+                    "timestamp": 1465981494.215221
+                }, 
+                {
+                    "state": "PendingActive", 
+                    "timestamp": 1465981521.715096
+                }, 
+                {
+                    "state": "Failed", 
+                    "timestamp": 1465982286.66936
+                }
+            ], 
+            "commands": [], 
+            "cores_per_node": null, 
+            "description": {
+                "_config": null, 
+                "access_schema": null, 
+                "candidate_hosts": null, 
+                "cleanup": null, 
+                "cores": 32, 
+                "exit_on_error": false, 
+                "memory": null, 
+                "project": "gkd", 
+                "queue": "normal", 
+                "resource": "ncsa.bw", 
+                "runtime": 216, 
+                "sandbox": null
+            }, 
+            "finished": 1465982285.995027, 
+            "global_sandbox": "/scratch/sciteam/ha1/radical.pilot.sandbox", 
+            "health_check_enabled": true, 
+            "heartbeat": null, 
+            "input_transfer_finished": null, 
+            "input_transfer_started": null, 
+            "log": [
+                {
+                    "message": "Using bootstrapper /home/mingtha/ve/ve.rp_experiments/lib/python2.7/site-packages/radical/pilot/bootstrapper/bootstrap_1.sh", 
+                    "timestamp": 1465981499.503825
+                }, 
+                {
+                    "message": "Copying bootstrapper 'file://localhost/home/mingtha/ve/ve.rp_experiments/lib/python2.7/site-packages/radical/pilot/bootstrapper/bootstrap_1.sh' to agent sandbox (<saga.filesystem.directory.Directory object at 0x7f41664013d0>).", 
+                    "timestamp": 1465981499.504029
+                }, 
+                {
+                    "message": "Copying sdist 'file://localhost/home/mingtha/ve/ve.rp_experiments/local/lib/python2.7/site-packages/radical/utils/radical.utils-0.41.1.tar.gz' to sandbox (gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/).", 
+                    "timestamp": 1465981502.335516
+                }, 
+                {
+                    "message": "Copying sdist 'file://localhost/home/mingtha/ve/ve.rp_experiments/local/lib/python2.7/site-packages/saga/saga-python-0.41.1.tar.gz' to sandbox (gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/).", 
+                    "timestamp": 1465981503.453726
+                }, 
+                {
+                    "message": "Copying sdist 'file://localhost/home/mingtha/ve/ve.rp_experiments/local/lib/python2.7/site-packages/radical/pilot/controller/..//radical.pilot-v0.40.3-master.tar.gz' to sandbox (gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/).", 
+                    "timestamp": 1465981504.766979
+                }, 
+                {
+                    "message": "Copying CA certificate bundle 'file://localhost//home/mingtha/ve/ve.rp_experiments/lib/python2.7/site-packages/radical/pilot/bootstrapper/cacert.pem.gz' to sandbox (gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/).", 
+                    "timestamp": 1465981505.799748
+                }, 
+                {
+                    "message": "Writing agent configuration to file '/tmp/rp_agent_cfg_dirjk8Xym/agent_0.cfg'.", 
+                    "timestamp": 1465981506.716565
+                }, 
+                {
+                    "message": "Copying agent configuration file 'file://localhost/tmp/rp_agent_cfg_dirjk8Xym/agent_0.cfg' to sandbox (gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/).", 
+                    "timestamp": 1465981506.717951
+                }, 
+                {
+                    "message": "Submitting SAGA job with description: {'Project': 'gkd', 'Executable': '/bin/bash', 'TotalPhysicalMemory': None, 'WorkingDirectory': '/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/', 'Queue': 'normal', 'Environment': {}, 'WallTimeLimit': 216, 'Arguments': ['-l bootstrap_1.sh', \" -d 'radical.utils-0.41.1.tar.gz:saga-python-0.41.1.tar.gz:radical.pilot-v0.40.3-master.tar.gz' -m 'create' -p 'pilot.0000' -r 'local' -s 'rp.session.radical.mingtha.016967.0017' -v '/scratch/sciteam/ha1/radical.pilot.sandbox/ve_bw' -b 'default' -a 'multicore' -e 'module switch PrgEnv-cray PrgEnv-gnu' -e 'module load bwpy' -e 'module use --append /projects/sciteam/gkd/modules' -e 'module load openmpi' -w 'export HOME=$HOME' -w 'export PATH=$PATH' -w 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH' -f 'BIND_ADDRESS' -h 'ds053838.mlab.com:53838' -t 'ipogif0'\"], 'ProcessesPerHost': None, 'Error': 'bootstrap_1.err', 'Output': 'bootstrap_1.out', 'CandidateHosts': None, 'TotalCPUCount': 32}", 
+                    "timestamp": 1465981517.22058
+                }, 
+                {
+                    "message": "SAGA job submitted with job id [torque+gsissh://bw.ncsa.illinois.edu]-[4975484]", 
+                    "timestamp": 1465981518.611738
+                }, 
+                {
+                    "message": "FAILED startup", 
+                    "timestamp": 1465982285.995027
+                }, 
+                {
+                    "message": "real 1465982286.035036 sec | user 0.296 sec | system 0.732 sec | mem 28232.00 kB", 
+                    "timestamp": 1465982285.995027
+                }
+            ], 
+            "logfile": null, 
+            "nodes": null, 
+            "output_transfer_finished": null, 
+            "output_transfer_started": null, 
+            "pilotmanager": "pmgr.0000", 
+            "saga_job_id": "[torque+gsissh://bw.ncsa.illinois.edu]-[4975484]", 
+            "sagajobid": null, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "started": null, 
+            "state": "Failed", 
+            "statehistory": [
+                {
+                    "state": "PendingLaunch", 
+                    "timestamp": 1465981492.682124
+                }, 
+                {
+                    "state": "Launching", 
+                    "timestamp": 1465981493.810702
+                }, 
+                {
+                    "state": "PendingActive", 
+                    "timestamp": 1465981518.611904
+                }, 
+                {
+                    "state": "Failed", 
+                    "timestamp": 1465982285.995027
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981492.682124, 
+            "unit_ids": [
+                "unit.000030", 
+                "unit.000009", 
+                "unit.000031", 
+                "unit.000016", 
+                "unit.000004", 
+                "unit.000012", 
+                "unit.000018", 
+                "unit.000001", 
+                "unit.000017", 
+                "unit.000003", 
+                "unit.000015", 
+                "unit.000022", 
+                "unit.000000", 
+                "unit.000014", 
+                "unit.000020", 
+                "unit.000021", 
+                "unit.000002", 
+                "unit.000011", 
+                "unit.000023", 
+                "unit.000024", 
+                "unit.000019", 
+                "unit.000013", 
+                "unit.000025", 
+                "unit.000008", 
+                "unit.000010", 
+                "unit.000005", 
+                "unit.000026", 
+                "unit.000027", 
+                "unit.000007", 
+                "unit.000006", 
+                "unit.000028", 
+                "unit.000029"
+            ], 
+            "unitmanager": "umgr.0000"
+        }
+    ], 
+    "pmgr": [
+        {
+            "_id": "pmgr.0000", 
+            "data": {}, 
+            "pilot_launcher_workers": 1
+        }
+    ], 
+    "session": {
+        "_id": "rp.session.radical.mingtha.016967.0017", 
+        "connected": 1465981483.77273, 
+        "created": 1465981483.77273, 
+        "name": null
+    }, 
+    "umgr": [
+        {
+            "_id": "umgr.0000", 
+            "input_transfer_workers": 2, 
+            "output_transfer_workers": 2, 
+            "scheduler": "round_robin"
+        }
+    ], 
+    "unit": [
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000030", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.469385
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982288.867301
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.091983
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981497.699482
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000030", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.207975
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981497.573737
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981497.573737
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.207975, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000009", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.471357
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.71347
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.187644
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981497.700995
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000009", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.20199
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981497.58138
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981497.58138
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.20199, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000031", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.469531
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982288.960359
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.284692
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981497.890148
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000031", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.208385
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981497.794777
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981497.794777
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.208385, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000016", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.470469
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.236368
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.381665
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981497.892885
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000016", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.204028
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981497.797727
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981497.797727
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.204028, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000004", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.472184
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.373249
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.477779
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981498.082457
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000004", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.200548
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981497.986771
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981497.986771
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.200548, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000012", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.469941
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982289.24409
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.573098
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981498.083103
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000012", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.202856
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981497.987265
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981497.987265
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.202856, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000018", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.469007
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982288.677791
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.701167
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981498.278408
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000018", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.204591
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981498.179229
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981498.179229
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.204591, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000001", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.471235
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982301.89422
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.793804
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981498.277986
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000001", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.199678
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981498.178558
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981498.178558
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.199678, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000017", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.470603
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.332037
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.88892
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981498.814756
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000017", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.204315
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981498.370969
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981498.370969
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.204315, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000003", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.471628
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982297.1305
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981497.986356
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981498.905768
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000003", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.200259
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981498.809967
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981498.809967
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.200259, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000015", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.47034
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.141044
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981498.082302
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.005609
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000015", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.203749
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981498.90997
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981498.90997
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.203749, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000022", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.47243
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.562322
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981498.178425
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.097914
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000022", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.205697
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.000948
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.000948
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.205697, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000000", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.471912
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982301.989633
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981498.278285
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.197058
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000000", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.19936
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.101136
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.101136
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.19936, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000014", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.470208
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982289.435011
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981498.811477
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.380737
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000014", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.203433
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.193681
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.193681
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.203433, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000020", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.470858
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.179878
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981498.908275
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.476423
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000020", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.205145
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.38033
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.38033
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.205145, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000021", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.470734
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.084475
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.003318
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.572278
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000021", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.205421
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.477274
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.477274
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.205421, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000002", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.471768
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.524986
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.095986
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.668837
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000002", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.199971
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.572995
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.572995
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.199971, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000011", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.469809
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982289.151286
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.191353
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.761163
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000011", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.202567
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.667776
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.667776
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.202567, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000023", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.472052
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.275601
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.381353
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981499.920676
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000023", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.205974
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.764196
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.764196
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.205974, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000024", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.47111
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982297.227492
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.476742
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.019472
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000024", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.206251
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981499.926323
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981499.926323
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.206251, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000019", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.469231
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982288.770526
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.569666
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.112558
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000019", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.204868
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.016046
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.016046
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.204868, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000013", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.470076
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982289.339686
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.665222
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.211835
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000013", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.203147
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.11479
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.11479
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.203147, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000025", 
+            "callbackhistory": [
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.470983
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.671231
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.427479
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.762231
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.304329
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000025", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.206527
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.208518
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.208518
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.206527, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000008", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1465981500.471476
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.671527
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.808769
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981499.924967
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.480488
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000008", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.201702
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.306927
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.306927
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.201702, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000010", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1465981500.469675
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.670939
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982289.055612
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.02174
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.577278
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000010", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.202279
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.481024
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.481024
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.202279, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000005", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1465981500.472308
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.67202
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.466161
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.116903
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.669524
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000005", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.200837
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.576447
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.576447
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.200837, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000026", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1465981500.472552
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.672266
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.753101
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.209721
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.809964
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000026", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.206803
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.673205
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.673205
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.206803, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000027", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.671387
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.617993
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.305003
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981500.906151
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000027", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.207079
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.81314
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.81314
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.207079, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000007", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.672152
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.657768
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.479828
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981501.002172
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000007", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.201415
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981500.906688
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981500.906688
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.201415, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000006", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.672378
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982302.852656
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.575816
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981501.097059
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000006", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.201126
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981501.001175
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981501.001175
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.201126, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000028", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.671827
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.999377
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.672908
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981501.194115
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000028", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.207354
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981501.097269
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981501.097269
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.207354, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000029", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981503.671654
+                }, 
+                {
+                    "state": "Canceled", 
+                    "timestamp": 1465982296.904055
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "12935.0"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": null, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1465981500.812687
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1465981501.339794
+                }, 
+                {
+                    "message": "Pilot 'pilot.0000' has terminated with state 'Failed'. CU canceled.", 
+                    "timestamp": 1465982286.953096
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://bw.ncsa.illinois.edu/scratch/sciteam/ha1/radical.pilot.sandbox/rp.session.radical.mingtha.016967.0017-pilot.0000//unit.000029", 
+            "started": null, 
+            "state": "Canceled", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1465981494.207629
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1465981501.192647
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1465981501.192647
+                }
+            ], 
+            "stderr": null, 
+            "stdout": null, 
+            "submitted": 1465981494.207629, 
+            "unitmanager": "umgr.0000"
+        }
+    ]
+}

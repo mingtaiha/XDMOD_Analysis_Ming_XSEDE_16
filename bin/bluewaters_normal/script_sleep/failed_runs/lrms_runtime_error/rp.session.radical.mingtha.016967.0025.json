@@ -1,0 +1,18 @@
+{
+    "pilot": [], 
+    "pmgr": [
+        {
+            "_id": "pmgr.0000", 
+            "data": {}, 
+            "pilot_launcher_workers": 1
+        }
+    ], 
+    "session": {
+        "_id": "rp.session.radical.mingtha.016967.0025", 
+        "connected": 1466001917.905041, 
+        "created": 1466001917.905041, 
+        "name": null
+    }, 
+    "umgr": [], 
+    "unit": []
+}
