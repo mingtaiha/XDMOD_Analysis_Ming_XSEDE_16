@@ -1,5 +1,6 @@
 {
-    "resource" : "xsede.gordon",
+    "resource"  : "xsede.gordon",
+    "project"   : "TG-MCB090174",
     "setup" : 
     [
         {

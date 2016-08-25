@@ -1,5 +1,6 @@
 {
-    "resource" : "xsede.supermic",
+    "resource"  : "xsede.supermic",
+    "project"   : "TG-MCB090174",
     "setup" : 
     [
         {
