@@ -1,0 +1,17 @@
+Stampede_Normal,,,,Gordon_Normal,,,,Comet_Compute,,
+,,,,,,,,,,
+Cores Per Node,,,,Cores Per Node,,,,Cores Per Node,,
+16,,,,16,,,,24,,
+,,,,,,,,,,
+Total Jobs,"Jobs by Powers of 2, up to 256 Cores",,,Total Jobs,"Jobs by Powers of 2, up to 256 Cores",,,Total Jobs,"Jobs by Powers of 2, up to 256 Cores",
+910303,705702,,,276803,260896,,,837850,694162,
+,,,,,,,,,,
+"%Jobs Powers of 2, up to 256 Cores",,,,"%Jobs Powers of 2, up to 256 Cores",,,,"%Jobs Powers of 2, up to 256 Cores (appx)",,
+77.5238574409,,,,94.2533137285,,,,82.8503908814,,
+,,,,,,,,,,
+Core Count,Average Execution Time,Number of Jobs,,Core Count,Average Execution Time,Number of Jobs,,Core Count,Average Execution Time,Number of Jobs
+16,3.3532676384,384268,,16,5.3269646468,215416,,24,2.5630164374,542156
+32,3.7992852355,116816,,32,5.7720351965,20250,,48,3.0813906467,123785
+64,4.3258982517,90155,,64,5.2295994201,15284,,72,5.715380727,16116
+128,3.2437627899,76215,,128,4.1708771588,6435,,144,3.8311611229,11285
+256,4.9640153044,38248,,256,4.7785070976,3511,,264,4.5187737233,820
