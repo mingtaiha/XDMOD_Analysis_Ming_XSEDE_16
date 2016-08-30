@@ -1,0 +1,91 @@
+{
+    "stampede" : {
+        "project"           : "TG-MCB090174",
+        "access_schema"     : "slurm+ssh",
+        "username"          : "tg829619",
+        "queue"             : "normal",
+        "saga_id"           : "stampede.tacc.utexas.edu",
+        "karnak_id"         : "stampede.tacc.xsede.org",
+        "cores_node_map"    : {
+            "16"    : 16,
+            "32"    : 32,
+            "64"    : 64,
+            "128"   : 128,
+            "256"   : 256
+            },
+        "cores_job_dist"    : {
+            "16"    : 54.45187912,
+            "32"    : 71.00504179,
+            "64"    : 83.78026419,
+            "128"   : 94.58014856,
+            "256"   : 100
+            },
+        "avg_exec_time"     : {
+            "16"    : 3.3532676384,
+            "32"    : 3.7992852355,
+            "64"    : 4.3258982517,
+            "128"   : 3.2437627899,
+            "256"   : 4.9640153044
+        }
+    },
+
+    "comet" : {
+        "project"           : "TG-CCR140028",
+        "access_schema"     : "slurm+ssh",
+        "username"          : "mingtha",
+        "queue"             : "compute",
+        "saga_id"           : "comet.sdsc.xsede.org",
+        "karnak_id"         : "comet.sdsc.xsede.org",
+        "cores_node_map"    : {
+            "16"    : 24,
+            "32"    : 48,
+            "64"    : 72,
+            "128"   : 144,
+            "256"   : 264
+            },
+        "cores_job_dist"    : {
+            "16"    : 78.10222974,
+            "32"    : 95.93452249,
+            "64"    : 98.25617075,
+            "128"   : 99.88187195,
+            "256"   : 100
+            },
+        "avg_exec_time"     : {
+            "16"    : 2.5630164374,
+            "32"    : 3.0813906467,
+            "64"    : 5.7153807270,
+            "128"   : 3.8311611229,
+            "256"   : 4.5187737233
+        }
+    },
+
+    "gordon" : {
+        "project"           : "TG-MCB090174",
+        "access_schema"     : "torque+ssh",
+        "username"          : "mingtha",
+        "queue"             : "normal",
+        "saga_id"           : "gordon.sdsc.xsede.org",
+        "karnak_id"         : "gordon.sdsc.xsede.org",
+        "cores_node_map"    : {
+            "16"    : 16,
+            "32"    : 32,
+            "64"    : 64,
+            "128"   : 128,
+            "256"   : 256
+            },
+        "cores_job_dist"    : {
+            "16"    : 82.56776647,
+            "32"    : 90.32947995,
+            "64"    : 96.18775297,
+            "128"   : 98.65425304,
+            "256"   : 100
+            },
+        "avg_exec_time"     : {
+            "16"    : 5.3269646468,
+            "32"    : 5.7720351965,
+            "64"    : 5.2295994201,
+            "128"   : 4.1708771588,
+            "256"   : 4.7785070976
+        }
+    }
+}
