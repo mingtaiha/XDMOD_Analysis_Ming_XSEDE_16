@@ -1,4 +1,5 @@
 import urllib
+from operator import itemgetter
 from datetime import date
 from HTMLParser import HTMLParser
 
@@ -13,7 +14,7 @@ class karnakParser(HTMLParser):
     def __init__(self):
         HTMLParser.__init__(self)
         self.output = list()
-        self.karnak_dict = dict()
+        self.karnak_list = list()
 
     def handle_data(self, data):
         if data != '\n':
@@ -23,18 +24,20 @@ class karnakParser(HTMLParser):
         if self.output[0] == "Job is unknown on specified system\n":
             print "Job doesn't exist"
         else:
+            print self.output[0]
             job = self.output[0].split()
-            self.karnak_dict[job[0] + "_ID"] = job[1]
-            self.karnak_dict['Resource'] = job[3]
+            self.karnak_list.append((job[0] + "_ID", job[1]))
+            self.karnak_list.append(('Resource', job[3]))
             
             cur_year = str(date.today().year)
-            self.karnak_dict["Submit_Date"] = self.output[7].split(' ')[0] + "/" + cur_year
-            self.karnak_dict["Submit_Time_(CDT)"] = self.output[7].split(' ')[1]
-            self.karnak_dict["Processors"] = int(self.output[8])
-            self.karnak_dict["Requested_Wall_Time"] = self.output[9]
-            self.karnak_dict["Predicted_Wait_Time"] = self.output[10].split('\n')[0]
-            self.karnak_dict["90%_Confidence_Interval"] = self.output[11][2:]
-            return self.karnak_dict
+            self.karnak_list.append(("Submit_Date", self.output[7].split(' ')[0] + "/" + cur_year))
+            self.karnak_list.append(("Submit_Time_(CDT)", self.output[7].split(' ')[1]))
+            self.karnak_list.append(("Processors", int(self.output[8])))
+            self.karnak_list.append(("Requested_Wall_Time", self.output[9]))
+            self.karnak_list.append(("Predicted_Wait_Time", self.output[10].split('\n')[0]))
+            self.karnak_list.append(("90%_Confidence_Interval", self.output[11][2:]))
+            self.karnak_list = sorted(self.karnak_list, key=itemgetter(0))
+            return self.karnak_list
 
 
 def job_id_parse(resource, saga_id):

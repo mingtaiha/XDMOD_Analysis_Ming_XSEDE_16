@@ -1,3 +1,4 @@
+import csv
 import sys
 import json
 import time
@@ -6,7 +7,8 @@ import random
 import saga
 import karnak_reader as kr
 
-SLEEP_TIME = 60 
+SLEEP_TIME = 5
+BOOTSTRAP_TIME = 1
 
 res_to_karnak_map = { 'stampede'    : 'stampede.tacc.xsede.org',
                       'gordon'      : 'gordon.sdsc.xsede.org',
@@ -52,28 +54,45 @@ with open('resource_handle.json') as j_file:
 
 res_conf = conf[res]
 
-cores, exec_time = rand_select(res_conf['cores_node_map'], res_conf['cores_job_dist'], res_conf['avg_exec_time'])
+for i in range(500):
+    cores, exec_time = rand_select(res_conf['cores_node_map'], res_conf['cores_job_dist'], res_conf['avg_exec_time'])
 
-js = saga.job.Service(res_conf['access_schema']+"://"+res_conf["username"]+"@"+res_conf["saga_id"])
-jd = saga.job.Description()
+    js = saga.job.Service(res_conf['access_schema']+"://"+res_conf["username"]+"@"+res_conf["saga_id"])
+    jd = saga.job.Description()
 
-jd.executable = "/bin/sleep"
-jd.arguments = ['-m', str(SLEEP_TIME)]
-jd.queue = res_conf["queue"]
-jd.project = res_conf["project"]
-jd.total_cpu_count = res_conf["cores_job_dist"][str(cores)]
-jd.wall_time_limit = SLEEP_TIME
-#jd.wall_time_limit = exec_time * 60 * 60
+    jd.executable = "/bin/sleep"
+    jd.arguments = [str(SLEEP_TIME * 60)]
+    jd.queue = res_conf["queue"]
+    jd.project = res_conf["project"]
+    jd.total_cpu_count = cores
+    jd.wall_time_limit = SLEEP_TIME + BOOTSTRAP_TIME
 
-j = js.create_job(jd)
+#   jd.wall_time_limit = exec_time * 60
 
-start = time.time()
+    j = js.create_job(jd)
+    
+    start_time = time.time()
+    exec_time = SLEEP_TIME * 60
+    
+    j.run()
+    time.sleep(120)
+    karnak_query = kr.karnak_query(res, j.id)
+    print karnak_query
+    
+    j.wait()
+    run_time = time.time() - start_time
+    karnak_query.append(('Actual_Run_Time', run_time))
+    karnak_query.append(('Actual_Execution_Time', exec_time))
+    karnak_query.append(('Actual_Queue_Time', run_time - exec_time))
+    
+    write_list = list()
+    for i in range(len(karnak_query)):
+        write_list.append(karnak_query[i][1])
+    
+    print karnak_query
+    print write_list
+    
+    with open(res+'_runs.csv', 'a') as c_res:
+        writer = csv.writer(c_res)
+        writer.writerow(write_list)
 
-
-j.run()
-print j.id
-
-karnak_query = kr.karnak_query(res, j.id)
-print karnak_query
-
-j.wait()
