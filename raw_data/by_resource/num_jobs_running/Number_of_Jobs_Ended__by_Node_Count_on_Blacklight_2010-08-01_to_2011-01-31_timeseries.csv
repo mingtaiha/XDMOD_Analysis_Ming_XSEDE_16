@@ -1,0 +1,20 @@
+title
+"Number of Jobs Ended: by Node Count"
+parameters
+"Resource =  PSC-BLACKLIGHT"
+start,end
+2010-08-01,2011-01-31
+---------
+Day,"[16] Number of Jobs Ended","[32] Number of Jobs Ended","[64] Number of Jobs Ended","[128] Number of Jobs Ended","[256] Number of Jobs Ended","[48] Number of Jobs Ended","[96] Number of Jobs Ended","[80] Number of Jobs Ended","[144] Number of Jobs Ended","[160] Number of Jobs Ended","[112] Number of Jobs Ended"
+2011-01-21,2,0,4,0,0,0,1,0,0,0,0
+2011-01-22,0,0,14,0,0,0,0,0,0,0,0
+2011-01-23,0,0,8,1,0,0,0,0,0,0,0
+2011-01-24,22,5,9,1,0,0,1,0,0,0,0
+2011-01-25,9,3,5,1,0,0,2,0,0,2,0
+2011-01-26,33,9,6,10,4,0,2,0,0,0,0
+2011-01-27,115,22,8,21,1,4,3,0,1,0,1
+2011-01-28,281,58,58,42,40,1,0,1,0,0,0
+2011-01-29,74,0,4,4,0,0,0,0,1,0,0
+2011-01-30,19,1,2,2,0,1,0,1,0,0,0
+2011-01-31,39,37,3,3,0,3,0,5,0,0,0
+---------
