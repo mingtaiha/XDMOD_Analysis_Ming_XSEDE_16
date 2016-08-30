@@ -7,9 +7,6 @@ import matplotlib.pyplot as plt
 from math import sqrt
 from operator import itemgetter
 
-#28 - Comet
-#29 - Gordon
-#37 - Stampede
 
 
 pp = pprint.PrettyPrinter(indent=4)
@@ -231,6 +228,34 @@ def avg_wall_time_node(wall_time_file, num_jobs_run_file, dict_filename):
         writer.writerow(['Node Count', 'Average Execution Time', 'Number of Jobs'])
         for i in range(len(avg_job_run)):
             writer.writerow(avg_job_run[i])
+
+
+
+def plot(filename):
+    
+    df = csv_to_pd(filename)
+    pd_avail = csv_to_pd('cleaned_resource_availability.csv')
+    col_name = df.columns[26]
+    series = df.iloc[:,26]
+    series_avail = pd_avail.iloc[:,26]
+
+    series = series[series.notnull()]
+    series_avail = series_avail[series_avail.notnull()]
+    
+    start_date = series_avail.nonzero()[0][0]
+    end_date = series_avail.nonzero()[0][-1] + 1
+    series = series.iloc[start_date : end_date]
+    series_avail = series_avail.iloc[start_date : end_date]
+    
+    print series
+
+    plt.figure()
+    ax = series.plot(kind='scatter')
+
+
+filename = sys.argv[1]
+plot(filename)
+
 
 """
 def avg_wall_time_agg(*filenames):
