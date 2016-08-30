@@ -138,6 +138,7 @@ if __name__ == "__main__":
 
             cuds = list()
             cud = rp.ComputeUnitDescription()
+            cud.pre_exec = ['pip install radical.synapse']
             cud.executable = '/bin/sleep'
             cud.arguments = [str(floor(exec_time * 60.0))]
             cuds.append(cud)
