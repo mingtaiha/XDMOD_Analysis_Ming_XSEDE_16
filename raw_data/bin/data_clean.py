@@ -231,7 +231,6 @@ def avg_wall_time_node(wall_time_file, num_jobs_run_file, dict_filename):
 
 
 
-<<<<<<< HEAD
 def node_to_core(in_file, out_file, cores_per_node):
     
     node_file = open(in_file, 'r')
@@ -275,7 +274,6 @@ def plot(filename):
     plt.figure()
     ax = series_x.plot(kind='line')
         
-=======
 def plot(filename):
     
     df = csv_to_pd(filename)
@@ -302,7 +300,6 @@ filename = sys.argv[1]
 plot(filename)
 
 
->>>>>>> 9c26825fda2dd6935312d3566eae8960bbca9e88
 """
 def avg_wall_time_agg(*filenames):
 
