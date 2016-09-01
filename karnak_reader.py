@@ -22,9 +22,13 @@ class karnakParser(HTMLParser):
 
     def clean_data(self):
         if self.output[0] == "Job is unknown on specified system\n":
-            print "Job doesn't exist"
+            print "Job was not found on Karnak system"
+            return "No Job"
+        elif self.output[0][:13] == "Unknown system":
+            print "Karnak Query Failed"
+            return "No Job"
         else:
-            print self.output[0]
+            print self.output[11]
             job = self.output[0].split()
             self.karnak_list.append((job[0] + "_ID", job[1]))
             self.karnak_list.append(('Resource', job[3]))
@@ -42,10 +46,8 @@ class karnakParser(HTMLParser):
 
 def job_id_parse(resource, saga_id):
     
-    job_id = ""
-    if resource == 'stampede':
-        job_id = saga_id.split('-')[1].split(']')[0].split('[')[1]
-        return job_id
+    job_id = saga_id.split('-')[1].split(']')[0].split('[')[1]
+    return job_id
 
 def karnak_query(resource, saga_id):
 

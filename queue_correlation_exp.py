@@ -7,7 +7,7 @@ import random
 import saga
 import karnak_reader as kr
 
-SLEEP_TIME = 5
+SLEEP_TIME = 30
 BOOTSTRAP_TIME = 1
 
 res_to_karnak_map = { 'stampede'    : 'stampede.tacc.xsede.org',
@@ -54,7 +54,7 @@ with open('resource_handle.json') as j_file:
 
 res_conf = conf[res]
 
-for i in range(500):
+for i in range(100):
     cores, exec_time = rand_select(res_conf['cores_node_map'], res_conf['cores_job_dist'], res_conf['avg_exec_time'])
 
     js = saga.job.Service(res_conf['access_schema']+"://"+res_conf["username"]+"@"+res_conf["saga_id"])
@@ -78,6 +78,9 @@ for i in range(500):
     time.sleep(120)
     karnak_query = kr.karnak_query(res, j.id)
     print karnak_query
+    if karnak_query == "No Job":
+        j.wait()
+        continue
     
     j.wait()
     run_time = time.time() - start_time
@@ -92,7 +95,7 @@ for i in range(500):
     print karnak_query
     print write_list
     
-    with open(res+'_runs.csv', 'a') as c_res:
+    with open(res+'_runs_'+SLEEP_TIME+'min.csv', 'a') as c_res:
         writer = csv.writer(c_res)
         writer.writerow(write_list)
 

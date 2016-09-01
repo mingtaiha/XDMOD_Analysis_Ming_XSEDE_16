@@ -1,2 +1,1 @@
 90%_Confidence_Interval,Job_ID,Predicted_Wait_Time,Processors,Requested_Wall_Time,Resource,Submit_Date,Submit_Time_(CDT),Actual_Wait_Time,Actual_Execution_Time,Actual_Queue_Time
-0,7561243,0,256,00:06:00,stampede.tacc.xsede.org,08/30/2016,15:56:41,349.8541009426117,300,49.854100942611694
