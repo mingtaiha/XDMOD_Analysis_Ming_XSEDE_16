@@ -95,7 +95,7 @@ for i in range(100):
     print karnak_query
     print write_list
     
-    with open(res+'_runs_'+SLEEP_TIME+'min.csv', 'a') as c_res:
+    with open(res+'_runs_'+str(SLEEP_TIME)+'min.csv', 'a') as c_res:
         writer = csv.writer(c_res)
         writer.writerow(write_list)
 
