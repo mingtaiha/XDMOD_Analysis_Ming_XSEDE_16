@@ -254,33 +254,12 @@ def node_to_core(in_file, out_file, cores_per_node):
 
 
 def plot(filename):
-
-    
-    pd_x = csv_to_pd(filename)
-    pd_avail = csv_to_pd('cleaned_resource_availability.csv')
-    
-
-    dict_x = dict(zip([i for i in range(len(pd_x.columns))], list(pd_x.columns.values)))
-    dict_avail = dict(zip([i for i in range(len(pd_avail.columns))], list(pd_avail.columns.values)))
-
-    series_x = pd_x[pd_x[dict_x[resource]].notnull()][26]
-    series_avail = pd_avail[pd_avail[dict_avail[resource]].notnull()][26]
-  
-    start_date = series_avail.nonzero()[0][0]
-    end_date = series_avail.nonzero()[0][-1] + 1
-    series_x = series_x.iloc[start_date : end_date]
-    series_avail = series_avail.iloc[start_date : end_date]
-
-    plt.figure()
-    ax = series_x.plot(kind='line')
-        
-def plot(filename):
     
     df = csv_to_pd(filename)
     pd_avail = csv_to_pd('cleaned_resource_availability.csv')
-    col_name = df.columns[26]
-    series = df.iloc[:,26]
-    series_avail = pd_avail.iloc[:,26]
+    col_name = df.columns[37]
+    series = df.iloc[:,37]
+    series_avail = pd_avail.iloc[:,37]
 
     series = series[series.notnull()]
     series_avail = series_avail[series_avail.notnull()]
@@ -293,7 +272,8 @@ def plot(filename):
     print series
 
     plt.figure()
-    ax = series.plot(kind='scatter')
+    ax = series.plot()
+    plt.show()
 
 
 filename = sys.argv[1]
@@ -350,11 +330,13 @@ aggregate_csv_xdmod(folderpath, aggr_name)
 """
 
 
-filename1 = sys.argv[1]
-filename2 = sys.argv[2]
+#filename1 = sys.argv[1]
+#filename2 = sys.argv[2]
 #dict_file = sys.argv[3]
 #cross_correlation(filename1, filename2)
 #avg_wall_time_node(filename1, filename2, dict_file)
 #avg_wall_time_agg(sys.argv)
-core_count = sys.argv[3]
-node_to_core(filename1, filename2, core_count)
+#core_count = sys.argv[3]
+#node_to_core(filename1, filename2, core_count)
+
+
